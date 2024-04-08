@@ -1,12 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="output.css">
-</head>
-<body>
-  <p class="bg-green-500">Hi!</p>
+<html>
+<body class="dark">
+<main>
+  
+  <div class="relative flex flex-col h-[100vh] items-center justify-center bg-white dark:bg-black transition-bg">
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="jumbo absolute -inset-[10px] opacity-50"></div>
+    </div>
+
+    <div class="absolute inset-0 flex flex-col items-center justify-center">
+      <div class="relative flex items-center justify-center w-24 h-24">
+        <img src="https://www.codedex.io/images/codedex-bot-logo.gif" alt="Codédex Logo, a gif of a jumping 8-bit computer with a smiling face." class="w-16 h-16" />
+      </div>
+
+    <h1 class="relative flex items-center text-6xl font-bold text-gray-800 dark:text-white dark:opacity-80 transition-colors">
+      Codédex Personality Test
+    </h1>
+
+    <p class="mt-4 text-lg text-gray-800 dark:text-white dark:opacity-80 transition-colors">
+      A Personality Test for Codédex Users that just works, no strings attached.
+    </p>
+
+    <div class="mt-6">
+      <button id="anbutton" class="backdrop-blur-3xl px-3 py-1 border border-stone-200 rounded-full drop-shadow-sm text-sm text-stone-800 dark:text-white bg-white/40 dark:bg-black/40 hover:border-stone-300 transition-colors dark:border-stone-500 dark:hover:border-stone-400" onclick="animateOpacity(0.9, 1000)">Start</button>
+    </div>
+  </div>
+</main>
+<footer style="margin-top: -200px;"></footer>
+  <div class="flex items-center justify-center h-14 bg-white dark:bg-black transition-bg">
+    <p class="text-sm text-gray-800 dark:text-white dark:opacity-80 transition-colors">
+      Made with <span class="text-red-500">❤</span> by <a class="underline" href="https://www.codedex.io/@noskipp">NoSkipp</a>
+    </p>
+  </div>
+</footer>
 </body>
+<head>
+    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="imports/godrays.css">
+    <link rel="stylesheet" href="imports/button.css">
+    <script src="imports/transition.js"></script>
+</head>
 </html>
