@@ -2,7 +2,8 @@
 module.exports = {
   content: ["public/*",], //Somehow only this works..?
   theme: {
-    extend: {},
+    extend: {
+    },
   },
   plugins: [],
 }

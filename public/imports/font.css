@@ -1,0 +1,61 @@
+@font-face {
+    font-family: 'PICO-8';
+    src: url('../fonts/pico-8.ttf') format('truetype');
+    src: url('../fonts/pico-8.otf') format('opentype'); /* load both for compatibility, might be wrong? */
+}
+
+#eightbit {
+    font-family: 'PICO-8', sans-serif;
+    text-align: center;
+    white-space: pre;
+}
+
+.animhover {
+    animation: hover 2s infinite ease-in-out;
+}
+
+
+.lime-shadow {
+    text-shadow: 2px 2px 6px lime;
+}
+
+.red-shadow {
+    text-shadow: 2px 2px 6px red;
+}
+
+.yellow-shadow {
+    text-shadow: 2px 2px 6px yellow;
+}
+
+#container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#container::after {
+    content: "" ;
+    position: absolute;
+    inset: 0;
+    background: black;
+    background: linear-gradient(180deg, #050505 5%, rgba(5, 5, 5, 0) 133%);
+}
+
+#content {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  @keyframes hover {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(1.5px);
+    }
+  }
