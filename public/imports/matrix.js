@@ -6,10 +6,10 @@ let config = {
     size: 12,
     color: "#161819",
     amount: 1000,
-    gap: 3,
+    gap: 2,
     litColor: "#28282B",
     fps: 24,
-    noise: 0.01,
+    noise: 0.005,
     background: "#000000",
   }
 

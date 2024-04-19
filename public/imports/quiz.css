@@ -4,40 +4,36 @@
     src: url('../fonts/pico-8.otf') format('opentype'); /* load both for compatibility, might be wrong? */
 }
 
-@font-face {
-    font-family: 'Noita Blackletter';
-    src: url('../fonts/NoitaBlackletter-Regular.otf') format('opentype');
-    src: url('../fonts/NoitaBlackletter-Regular.ttf') format('truetype');
-}
-
 #eightbit {
     font-family: 'PICO-8', monospace;
     text-align: center;
     white-space: pre;
+    color: lime;
 }
-
-#title {
-    font-family: 'Noita Blackletter', monospace;
-    text-align: center;
-    white-space: pre;
-}
-
-.animhover {
-    animation: hover 2s infinite ease-in-out forwards;
-}
-
 
 .lime-shadow {
     text-shadow: 2px 2px 6px lime;
+    color: lime;
 }
 
-.red-shadow {
+.red {
     text-shadow: 2px 2px 6px red;
-    font-size: 11px; /* cuz it looks better idk */
+    color: red;
 }
 
-.yellow-shadow {
+.yellow {
     text-shadow: 2px 2px 6px yellow;
+    color: yellow;
+}
+
+.white {
+    text-shadow: 2px 2px 6px white;
+    color: white;
+}
+
+.dark-green {
+    text-shadow: 2px 2px 6px darkgreen;
+    color: darkgreen;
 }
 
 #container {
@@ -62,24 +58,4 @@
     transform: translate(-50%, -50%);
     text-align: center;
     font-size: 13px;
-  }
-
-  @keyframes hover {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(3.5px);
-    }
-  }
-
-  @keyframes blink {
-    0%, 100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0;
-    }
-  }
-
-  
+}

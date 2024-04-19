@@ -1,42 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>TBA</title>
   <link rel="stylesheet" href="imports/font.css">
   <link rel="stylesheet" href="output.css">
   <script type="module" src="imports/matrix.js"></script>
+  <script type="module" src="imports/titlescreen.js"></script>
+  <script type="module" src="imports/smoothfade.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
 </head>
 <body class="bg-black flex overflow-hidden">
   <div id="container"></div>
   <div id="content">
-    <p id="eightbit" class="animhover font-bold relative flex lime-shadow mt-2" style="color: rgba(0, 255, 0, 0.74)">.--------------------------------------------------------.
-| __        ___           _                              |
-| \ \      / / |__   __ _| |_                            |
-|  \ \ /\ / /| '_ \ / _` | __|                           |
-|   \ v  v / | | | | (_| | |_                            |
-|    \_/\_/  |_| |_|\__,_|\__|                           |
-|                                                        |
-|     _       _                 _                        |
-|    / \   __| |_   _____ _ __ | |_ _   _ _ __ ___ _ __  |
-|   / _ \ / _` \ \ / / _ \ '_ \| __| | | | '__/ _ \ '__| |
-|  / ___ \ (_| |\ V /  __/ | | | |_| |_| | | |  __/ |    |
-| /_/   \_\__,_| \_/ \___|_| |_|\__|\__,_|_|  \___|_|    |
-|                                                        |
-|                                       ___              |
-|   __ _ _ __ ___   _   _  ___  _   _  |__ \             |
-|  / _` | '__/ _ \ | | | |/ _ \| | | |   / /             |
-| | (_| | | |  __/ | |_| | (_) | |_| |  |_|              |
-|  \__,_|_|  \___|  \__, |\___/ \__,_|  (_)              |
-|                   |___/                                |
-`--------------------------------------------------------'</p><br>
+    <p id="eightbit" class="font-extrabold animhover relative flex lime-shadow mt-2" style="color: rgba(0, 255, 0, 0.74)">&#10;&#13; .--------------------------------------------------------.
+ | __        ___           _                              |
+ | \ \      / / |__   __ _| |_                            |
+ |  \ \ /\ / /| '_ \ / _` | __|                           |
+ |   \ v  v / | | | | (_| | |_                            |
+ |    \_/\_/  |_| |_|\__,_|\__|                           |
+ |                                                        |
+ |     _       _                 _                        |
+ |    / \   __| |_   _____ _ __ | |_ _   _ _ __ ___ _ __  |
+ |   / _ \ / _` \ \ / / _ \ '_ \| __| | | | '__/ _ \ '__| |
+ |  / ___ \ (_| |\ V /  __/ | | | |_| |_| | | |  __/ |    |
+ | /_/   \_\__,_| \_/ \___|_| |_|\__|\__,_|_|  \___|_|    |
+ |                                                        |
+ |                                       ___              |
+ |   __ _ _ __ ___   _   _  ___  _   _  |__ \             |
+ |  / _` | '__/ _ \ | | | |/ _ \| | | |   / /             |
+ | | (_| | | |  __/ | |_| | (_) | |_| |  |_|              |
+ |  \__,_|_|  \___|  \__, |\___/ \__,_|  (_)              |
+ |                   |___/                                |
+ `--------------------------------------------------------'</p><br><br>
 
-    <h1 id="eightbit" class="font-bold lime-shadow mt-20" style="color: rgba(0, 255, 0, 0.74)">(( what adventurer are you? ))</h1>
+    <h1 id="eightbit" class="font-extrabold lime-shadow mt-20" style="color: rgba(0, 255, 0, 0.74)">(( what adventurer are you? ))&#10;&#13;<a class="font-normal">A simple, 8-bit styled, keyboard controlled Personality Quiz</a></h1>
       <br>
     <p id="eightbit" class="lime-shadow" style="color: rgba(0, 255, 0, 0.74)">1> Start</p>
-    <p id="eightbit" class="lime-shadow mt-2" style="color: rgba(0, 255, 0, 0.74)">2> credits</p>
-    <p id="eightbit" class="lime-shadow mt-12" style="color: rgba(0, 255, 0, 0.74)">Made with <a class="red-shadow" style="color: red">&#x2665;</a> by <a class="underline" href="https://codedex.io/@noskipp">NoSkipp</a>, &#10;&#13;for <a style="color: yellow" class="yellow-shadow underline" href="https://www.codedex.io/community/monthly-challenge/submission/JDOP2gqJh12IalbyRy6Y">Codedex's April Challenge</a></p> 
+    <p id="eightbit" class="lime-shadow mt-2" style="color: rgba(0, 255, 0, 0.74)">2> Credits</p>
+    <p id="eightbit" class="lime-shadow mt-12" style="color: rgba(0, 255, 0, 0.74)">Made with <a class="red-shadow text-md" style="color: red">&#x00c7;</a> by <a class="underline" href="https://codedex.io/@noskipp">NoSkipp</a>, &#10;&#13;For <a style="color: yellow" class="yellow-shadow underline" href="https://www.codedex.io/community/monthly-challenge/submission/JDOP2gqJh12IalbyRy6Y">Codedex's April Challenge</a></p> 
   </div>
 
 
 </body>
 </html>
+
+
+<!-- PSA: I know that using "&#10;&#13;" is weird, but its fast.. -->
