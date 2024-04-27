@@ -1,18 +1,25 @@
 //All of this is pretty messy, I have no Idea how half of this works lmao, will be updated asap!
 //FYI: All of the weird Unicode characters are just for the decorations.
 
-let storyText = "This is .whiteÉ YOU./.\n.whiteÉ YOU./ are currently sitting in your .yellowÊ HOUSE./, waiting for something to happen when suddenly,\n.whiteÉ YOU./ hear a loud noise coming from outside.\n.whiteÉ YOU./ see a .redÂ MIGHTY CAT./ attacking an elderly person.\nWhat do .whiteÉ YOU./ do?\qrAfter the Issues from before, .whiteÉ YOU./ decide to hike through a .dgreenÏ FOREST./.\n.whiteÉ YOU./ suddenly stumble upon a mysterious, ancient .yellowÅ ARTIFACT./ half-buried in the ground.\nWhat do .whiteÉ YOU./ do?";
+let storyText = "This is .whiteÉ YOU./.\n.whiteÉ YOU./ are currently sitting in your .yellowÊ HOUSE./, waiting for something to happen when suddenly,\n.whiteÉ YOU./ hear a loud noise coming from outside.\n.whiteÉ YOU./ see a .redÂ MIGHTY CAT./ attacking an elderly person.\nWhat do .whiteÉ YOU./ do?\qr";
+//Question 2
+storyText += "After the Issues from before, .whiteÉ YOU./ decide to hike through a .dgreenÏ FOREST./.\n.whiteÉ YOU./ suddenly stumble upon a mysterious, ancient .yellowÅ ARTIFACT./ half-buried in the ground.\nWhat do .whiteÉ YOU./ do?\qr"
+//Question 3
+storyText += ".whiteÉ YOU./ continue your hike through the .dgreenÏ FOREST./. Suddenly, you hear a rustling in a group of bushes nearby.\n .whiteÉ YOU./ quickly turn yourself to them, two glooming, .redÈ RED EYES./ stare back at .whiteÉ YOU./.\n.whiteÉ YOU./ ready yourself, thinking about what to do.";
 storyText = storyText.replace(/\.lime-shadow/g, '<span class="lime-shadow">').replace(/\.red/g, '<span class="red">').replace(/\.yellow/g, '<span class="yellow">').replace(/\.white/g, '<span class="white">').replace(/\.dgreen/g, '<span class="dark-green">').replace(/\.\//g, '</span>');
 
 let sections = storyText.split("\qr");
 let currentSection = 0;
 let container = document.getElementById("eightbit");
 
+let buttonSound = new Audio('../sounds/button-124476.mp3');
+
 let personalities = ["Explorer", "Strategist", "Visionary", "Guardian"];
 let tally = personalities.reduce((acc, personality) => ({...acc, [personality]: 0}), {});
 
 let answers = [
     {1: ".whiteI./ will rush outside to investigate the commotion and offer help, driven by curiosity and courage.", 2: ".whiteI./ quickly devise a plan to distract the .redÂ MIGHTY CAT./ and safely rescue the person, using my surroundings for that!", 3: ".whiteI./ envision a creative way to calm the .redÂ MIGHTY CAT./, trying to turn it into a .dgreenÂ PEACEFUL CAT./ instead!", 4: ".whiteI./ immediately step in to protect the elderly person, placing myself between her and the .redÂ MIGHTY CAT./."},
+    {1: ".whiteI./ think .yellowIt./ looks shiny! Taking it for myself wouldn't hurt.", 2: ".whiteI./ think the best way to handle this without .redDAMAGING./ it would be calling someone who knows about this stuff?", 3: ".whiteI./ wonder about what stories this .yellowÅ ARTIFACT./ could tell. It's like finding a piece of a lost world!", 4: ".whiteI./ will leave it there, maybe hiding it under some more dirt to keep it .dgreenSAFE./."},
     {1: ".whiteI./ think .yellowIt./ looks shiny! Taking it for myself wouldn't hurt.", 2: ".whiteI./ think the best way to handle this without .redDAMAGING./ it would be calling someone who knows about this stuff?", 3: ".whiteI./ wonder about what stories this .yellowÅ ARTIFACT./ could tell. It's like finding a piece of a lost world!", 4: ".whiteI./ will leave it there, maybe hiding it under some more dirt to keep it .dgreenSAFE./."},
 ];
 
@@ -26,7 +33,7 @@ answers = answers.map(answer => {
 
 let isTyping = false;
 
-function typewriterEffect(text, container, cssClass, callback) {
+function typewriterEffect(text, container, cssClass, callback) { //I HAVE NO IDEAA HOW THIS WORKS, but it works
     isTyping = true;
     container.innerHTML = '';
     let i = 0;
@@ -69,6 +76,9 @@ function handleKeypress(event) {
 
     let option = event.key;
     if (["1", "2", "3", "4"].includes(option)) {
+        // Play the preloaded audio file
+        buttonSound.play();
+
         tally[personalities[option - 1]]++;
         currentSection++;
         if (currentSection < sections.length) {
@@ -91,7 +101,7 @@ function displayAnswers() {
 
 function startQuiz() {
     window.addEventListener("keypress", handleKeypress);
-    typewriterEffect(sections[0], container, 'lime-shadow', displayAnswers);
+    typewriterEffect(sections[2], container, 'lime-shadow', displayAnswers);
 }
 
 startQuiz();

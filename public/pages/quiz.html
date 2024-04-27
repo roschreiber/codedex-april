@@ -1,19 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>TBA</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Adventurer are you?</title>
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="../imports/quiz.css">
-  <link rel="stylesheet" href="../output.css"> <!-- Tailwindcss -->
+  <link rel="stylesheet" href="../output.css"> <!-- Tailwind CSS -->
+
+  <!-- JavaScript Modules -->
   <script type="module" src="../imports/matrix.js"></script>
-  <script type="module" type="module" src="../imports/typewriter.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+  <script type="module" src="../imports/typewriter.js"></script>
+  <script type="module" src="../imports/AudioHandler.js"></script> <!-- Handles audio fade-in, which sounds cool -->
 </head>
-<body class="bg-black flex flex-col overflow-hidden h-screen">
+<body class="bg-black flex flex-col justify-between overflow-hidden h-screen">
   <div id="container" class="flex-1"></div>
   <div id="content" class="flex-1 justify-center align-middle">
-    <div id="eightbit" class="lime-shadow">
-
-    </div>
+    <div id="eightbit" class="lime-shadow"></div>
   </div>
 </body>
 </html>
