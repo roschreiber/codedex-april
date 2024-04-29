@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Adventurer are you?</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../imports/quiz.css">
+  <link rel="stylesheet" href="../output.css"> <!-- Tailwind CSS -->
+
+  <!-- JavaScript Modules & Script for Button Press (too lazy to split it into more files..)-->
+  <script type="module" src="../imports/matrix.js"></script>
+  <script>
+    // Define the blink animation
+var style = document.createElement('style');
+style.type = 'text/css';
+style.innerHTML = `
+    @keyframes blink {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+    }
+    .blink {
+        animation: blink 0.5s infinite;
+    }
+`;
+document.getElementsByTagName('head')[0].appendChild(style);
+
+var buttonSound = new Audio('../sounds/button-124476.mp3');
+
+document.addEventListener('keydown', function(event) {
+    var container = document.querySelector('#container');
+    container.classList.add('rise');
+
+    if (event.key === '1') {
+        var selectedElement = document.querySelector('.backbtn');
+
+        selectedElement.classList.add('blink');
+
+        buttonSound.play();
+        setTimeout(function() {
+            window.location.href = '../index.html';
+        }, buttonSound.duration * 1000);
+    }
+});
+  </script>
+</head>
+<body class="bg-black flex flex-col justify-between overflow-hidden h-screen">
+  <div id="container" class="flex-1"></div>
+  <div id="content" class="flex-1 justify-center align-middle">
+    <div id="eightbit" class="lime-shadow">
+        <p><a class="underline">MUSIC</a>
+Main Menu Theme | "Simply Me" by Deoxys Beats
+Quiz Theme | "Little Slime's Adventure" by Spencer_YK
+
+<a class="underline">SFX</a>
+Button SFX | "Button" by UNIVERSFIELD
+Typewriter SFX | "keyboard5" by Pixabay
+
+<a class="underline">IMPORTS</a>
+Background | "Easy LED Matrix" by Fabwaseem
+
+Music / SFX provided by <a target="_blank" class="underline" href="https://free-stock-music.com">free-stock-music.com</a> and <a target="_blank" class="underline" href="https://pixabay.com">pixabay.com</a></p>
+        <p class="backbtn lime-shadow">1> Back</p>
+    </div>
+  </div>
+</body>
+</html>
